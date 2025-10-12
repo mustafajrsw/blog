@@ -5,6 +5,7 @@ namespace App\Mail;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -13,17 +14,13 @@ class LoggedInMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public User $user;
-
-    public array $loginInfo;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(User $user, array $loginInfo)
+    public function __construct(public User $user, public array $loginInfo)
     {
-        $this->user = $user;
-        $this->loginInfo = $loginInfo;
+        //
     }
 
     /**
@@ -42,6 +39,7 @@ class LoggedInMail extends Mailable
     public function content(): Content
     {
         return new Content(
+            view: 'mails.logged-in',
             with: [
                 'user' => $this->user,
                 'loginInfo' => $this->loginInfo,
@@ -57,6 +55,9 @@ class LoggedInMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromStorageDisk('public','test.txt'),
+            Attachment::fromStorageDisk('local','test.txt')->as('private.pdf'),
+        ];
     }
 }

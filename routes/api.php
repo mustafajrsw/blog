@@ -122,7 +122,7 @@ Route::middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function
         Route::prefix('profile')->group(function () {
             Route::get('', 'show_profile');
             Route::put('', 'update_profile');
-            Route::put('change-photo', 'change_photo');
+            Route::post('change-photo', 'change_photo');
         });
 
         // Change password
