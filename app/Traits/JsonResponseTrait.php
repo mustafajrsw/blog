@@ -56,7 +56,7 @@ trait JsonResponseTrait
     {
         return response()->json([
             'success' => true,
-            'message' => $this->statusCodes[$statusCode],
+            'status' => $this->statusCodes[$statusCode],
             'data' => $data,
         ], $statusCode);
     }
@@ -65,7 +65,8 @@ trait JsonResponseTrait
     {
         return response()->json([
             'success' => false,
-            'message' => $this->statusCodes[$statusCode],
+            'status' => $this->statusCodes[$statusCode],
+            'data' => $data,
         ], $statusCode);
     }
 }

@@ -21,8 +21,8 @@ return [
             'delete',
             'restore',
             'forceDelete',
-            'active',
-            'deactive',
+            'activate',
+            'deactivate',
         ],
 
         'posts' => [
@@ -131,10 +131,10 @@ return [
 
     'tokens' => [
         'web' => [
-            'default' => ['viewAny', 'view', 'create', 'update', 'delete', 'restore', 'forceDelete', 'active', 'deactive'],
+            'default' => ['viewAny', 'view', 'create', 'update', 'delete', 'restore', 'forceDelete', 'activate', 'deactivate'],
         ],
         'mobile' => [
-            'default' => ['viewAny', 'view', 'active', 'deactive'],
+            'default' => ['viewAny', 'view', 'activate', 'deactivate'],
         ],
     ],
 

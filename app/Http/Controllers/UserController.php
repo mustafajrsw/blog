@@ -125,24 +125,24 @@ class UserController extends Controller
     /**
      * Activate the specified user.
      */
-    public function active($id): JsonResponse
+    public function activate($id): JsonResponse
     {
-        $this->authorize('active', User::class);
+        $this->authorize('activate', User::class);
         $user = User::findOrFail($id);
-        $active = $user->update(['is_active' => true]);
+        $activated = $user->forceFill(['is_active' => true])->save();
 
-        return $active ? $this->success() : $this->fail();
+        return $activated ? $this->success() : $this->fail();
     }
 
     /**
      * Deactivate the specified user.
      */
-    public function deactive($id): JsonResponse
+    public function deactivate($id): JsonResponse
     {
-        $this->authorize('deactive', User::class);
+        $this->authorize('deactivate', User::class);
         $user = User::findOrFail($id);
-        $deactive = $user->update(['is_active' => false]);
+        $deactivated = $user->forceFill(['is_active' => false])->save();
 
-        return $deactive ? $this->success() : $this->fail();
+        return $deactivated ? $this->success() : $this->fail();
     }
 }

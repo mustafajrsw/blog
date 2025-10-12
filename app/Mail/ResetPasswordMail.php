@@ -2,28 +2,27 @@
 
 namespace App\Mail;
 
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class LoggedInMail extends Mailable
+class ResetPasswordMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public User $user;
+    public $resetUrl;
 
-    public array $loginInfo;
+    public $user;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(User $user, array $loginInfo)
+    public function __construct($user, $resetUrl)
     {
         $this->user = $user;
-        $this->loginInfo = $loginInfo;
+        $this->resetUrl = $resetUrl;
     }
 
     /**
@@ -32,7 +31,7 @@ class LoggedInMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Login Alert for '.$this->user->name,
+            subject: 'Password Reset Request for '.$this->user->name,
         );
     }
 
@@ -42,11 +41,11 @@ class LoggedInMail extends Mailable
     public function content(): Content
     {
         return new Content(
+            view: 'mails.reset-password',
             with: [
                 'user' => $this->user,
-                'loginInfo' => $this->loginInfo,
-                'resetLink' => url('/api/auth/password/reset'),
-            ]
+                'resetUrl' => $this->resetUrl,
+            ],
         );
     }
 

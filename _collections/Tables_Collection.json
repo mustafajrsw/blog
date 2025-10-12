@@ -1,1993 +1,2033 @@
 {
-    "info": {
-        "_postman_id": "f304a91e-1dba-4f30-b765-f29d23ab19cb",
-        "name": "Tables Collection",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-        "_exporter_id": "48220399",
-        "_collection_link": "https://moda01148990430-8219783.postman.co/workspace/MoDa-R4BIA's-Workspace~7af2d1d9-30f7-4db5-8e31-09ba58b18a2c/collection/48220399-f304a91e-1dba-4f30-b765-f29d23ab19cb?action=share&source=collection_link&creator=48220399"
-    },
-    "item": [
-        {
-            "name": "Post",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "title",
-                                    "value": "title example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "body",
-                                    "value": "body example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "post_status_id",
-                                    "value": "1",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/posts",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "title",
-                                    "value": "title example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "body",
-                                    "value": "body example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "post_status_id",
-                                    "value": "1",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/posts/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Sample",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts/sample",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "sample"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/posts/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "posts",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "Comment",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/comments",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/comments/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "comment",
-                                    "value": "comment example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "post_id",
-                                    "value": "10",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/comments",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "comment",
-                                    "value": "comment example",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/comments/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/comments/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/comments/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/comments/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/comments/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "comments",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "PostStatus",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "type",
-                                    "value": "type example",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "type",
-                                    "value": "type example",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/post-statuses/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "post-statuses",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "Reaction",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reactions",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reactions/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "reaction_type_id",
-                                    "value": "haha",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/reactions",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "reaction_type_id",
-                                    "value": "sad",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/reactions/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reactions/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reactions/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reactions/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reactions/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reactions",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "ReactionType",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "type",
-                                    "value": "type example",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "type",
-                                    "value": "type example",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/reaction-types/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "reaction-types",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "Reply",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/replies",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/replies/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "reply",
-                                    "value": "reply example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "comment_id",
-                                    "value": "5",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/replies",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "reply",
-                                    "value": "reply example",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/replies/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/replies/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/replies/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/replies/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/replies/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "replies",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        },
-        {
-            "name": "User",
-            "item": [
-                {
-                    "name": "All",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Show",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "name",
-                                    "value": "name example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "email",
-                                    "value": "email@example.com",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "password",
-                                    "value": "password",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "mobile",
-                                    "value": "0123456879",
-                                    "type": "number"
-                                },
-                                {
-                                    "key": "role",
-                                    "value": "user",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/users",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update",
-                    "request": {
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "body": {
-                            "mode": "urlencoded",
-                            "urlencoded": [
-                                {
-                                    "key": "name",
-                                    "value": "name example",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "email",
-                                    "value": "email@example.com",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "password",
-                                    "value": "password",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "mobile",
-                                    "value": "0123456879",
-                                    "type": "number"
-                                }
-                            ]
-                        },
-                        "url": {
-                            "raw": "{{base_api}}/users/1",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Soft Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Force Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users/force-delete/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "force-delete",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Deleted",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users/deleted",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "deleted"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Sample",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users/sample",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "sample"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Restore",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "application/json",
-                                "type": "text"
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "{{base_api}}/users/restore/50",
-                            "host": [
-                                "{{base_api}}"
-                            ],
-                            "path": [
-                                "users",
-                                "restore",
-                                "50"
-                            ]
-                        }
-                    },
-                    "response": []
-                }
-            ]
-        }
-    ],
-    "auth": {
-        "type": "bearer",
-        "bearer": [
-            {
-                "key": "token",
-                "value": "{{api_web_token}}",
-                "type": "string"
-            }
-        ]
-    },
-    "event": [
-        {
-            "listen": "prerequest",
-            "script": {
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {},
-                "exec": [
-                    ""
-                ]
-            }
-        },
-        {
-            "listen": "test",
-            "script": {
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {},
-                "exec": [
-                    ""
-                ]
-            }
-        }
-    ],
-    "variable": [
-        {
-            "key": "base_api",
-            "value": "http://127.0.0.1:8000/api"
-        },
-        {
-            "key": "api_web_token",
-            "value": "3|6xVwXQwFpRhPe7rYbAdzllXOBKRNZcVmNDbawA3T29972824",
-            "description": "admin"
-        },
-        {
-            "key": "api_mobile_token",
-            "value": "4|sERmJ2fq8b6cebFtSmogy3cbEEL5nUisUhgGhgf81c0694de",
-            "description": "admin"
-        },
-        {
-            "key": "api_web_token",
-            "value": "5|U005E54WuLzCSOUk2DBNsFog5g6fYgaigQtHEobm6652b9bb",
-            "description": "user"
-        },
-        {
-            "key": "api_mobile_token",
-            "value": "",
-            "description": "user"
-        }
-    ]
+	"info": {
+		"_postman_id": "fb2c600d-6571-450c-8b9f-f54d27627dbb",
+		"name": "Tables Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48220399",
+		"_collection_link": "https://moda01148990430-8219783.postman.co/workspace/MoDa-R4BIA's-Workspace~7af2d1d9-30f7-4db5-8e31-09ba58b18a2c/collection/48220399-fb2c600d-6571-450c-8b9f-f54d27627dbb?action=share&source=collection_link&creator=48220399"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/posts",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/posts/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "title example",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "body example",
+									"type": "text"
+								},
+								{
+									"key": "post_status_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/posts",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "title example",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "body example",
+									"type": "text"
+								},
+								{
+									"key": "post_status_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/posts/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/posts/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/posts/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/posts/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/posts/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"posts",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/comments",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/comments/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment example",
+									"type": "text"
+								},
+								{
+									"key": "post_id",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/comments",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment example",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/comments/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/comments/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/comments/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/comments/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/comments/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"comments",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PostStatus",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/post-statuses",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/post-statuses/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "type example",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/post-statuses",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "type example",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/post-statuses/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/post-statuses/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/post-statuses/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/post-statuses/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/post-statuses/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"post-statuses",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reaction",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reactions",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reactions/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reaction_type_id",
+									"value": "haha",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/reactions",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reaction_type_id",
+									"value": "sad",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/reactions/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reactions/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reactions/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reactions/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reactions/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reactions",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ReactionType",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reaction-types",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reaction-types/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "type example",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/reaction-types",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "type example",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/reaction-types/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reaction-types/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reaction-types/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reaction-types/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/reaction-types/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"reaction-types",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reply",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/replies",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/replies/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reply",
+									"value": "reply example",
+									"type": "text"
+								},
+								{
+									"key": "comment_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/replies",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reply",
+									"value": "reply example",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/replies/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/replies/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/replies/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/replies/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/replies/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"replies",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "name example",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0123456879",
+									"type": "number"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/users",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "name example",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mustafa01148990430@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "mobile",
+									"value": "0123456879",
+									"type": "number",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/users/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sample",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/sample",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"sample"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"restore",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "name example",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0123456879",
+									"type": "number"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/users/activate/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"activate",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{api_web_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_api",
+			"value": "http://127.0.0.1:8000/api"
+		},
+		{
+			"key": "api_web_token",
+			"value": "3|ukGou9ZwZYyAPpsDV1UcI7eguLmvIo40dHFkJ6sL364a30ae",
+			"description": "admin"
+		},
+		{
+			"key": "api_mobile_token",
+			"value": "4|sERmJ2fq8b6cebFtSmogy3cbEEL5nUisUhgGhgf81c0694de",
+			"disabled": true,
+			"description": "admin"
+		},
+		{
+			"key": "api_web_token",
+			"value": "5|U005E54WuLzCSOUk2DBNsFog5g6fYgaigQtHEobm6652b9bb",
+			"disabled": true,
+			"description": "user"
+		},
+		{
+			"key": "api_mobile_token",
+			"value": "",
+			"disabled": true,
+			"description": "user"
+		}
+	]
 }

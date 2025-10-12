@@ -9,68 +9,62 @@ use App\Http\Controllers\ReactionTypeController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\UserController;
 
-use App\Mail\LoggedInMail;
-use App\Models\User;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return 'Welcome  API';
 });
 
-Route::get('/send-mail', function () {
-    return Mail::to('mustafaelsayedfouda@hotmail.com')->send(new LoggedInMail(User::query()->where('id', 1)->first()));
-    // return new LoggedInMail(User::query()->where('id', 1)->first());
-});
-
 Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('web-login', 'web_login');
     Route::post('mobile-login', 'mobile_login');
-    Route::get('email/verify', 'verify_email')->middleware('isActive');
-    Route::get('email/re-verify', 're_verify_email')->middleware('isActive');
+    Route::get('email/verify', 'verify_email');
+    Route::get('email/re-verify', 're_verify_email');
+    Route::post('password/reset', 'reset_password');
+    Route::post('password/forgot', 'forgot_password');
 
 });
 
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function () {
 
     // Posts
     Route::prefix('posts')->controller(PostController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware(['hasRoles:admin,manager']);
         Route::get('restore/{id}', 'restore')->middleware(['hasRoles:admin']);
-        Route::delete('force-delete/{id}', 'force_delete')->middleware(['hasRoles:admin', 'isActive']);
+        Route::delete('force-delete/{id}', 'force_delete')->middleware(['hasRoles:admin']);
     });
 
     // Comments
-    Route::prefix('comments')->controller(CommentController::class)->middleware(['isActive', 'verifiedEmail'])->group(function () {
+    Route::prefix('comments')->controller(CommentController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware('hasRoles:admin,manager');
         Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
         Route::delete('force-delete/{id}', 'force_delete')->middleware('hasRoles:admin');
     });
 
     // Replies
-    Route::prefix('replies')->controller(ReplyController::class)->middleware(['isActive', 'verifiedEmail'])->group(function () {
+    Route::prefix('replies')->controller(ReplyController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware('hasRoles:admin,manager');
         Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
         Route::delete('force-delete/{id}', 'force_delete')->middleware('hasRoles:admin');
     });
 
     // Reactions
-    Route::prefix('reactions')->controller(ReactionController::class)->middleware(['isActive', 'verifiedEmail'])->group(function () {
+    Route::prefix('reactions')->controller(ReactionController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware('hasRoles:admin,manager');
         Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
         Route::delete('force-delete/{id}', 'force_delete')->middleware('hasRoles:admin');
     });
 
     // Post-Statuses
-    Route::prefix('post-statuses')->controller(PostStatusController::class)->middleware(['isActive', 'verifiedEmail'])->group(function () {
+    Route::prefix('post-statuses')->controller(PostStatusController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware('hasRoles:admin,manager');
         Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
         Route::delete('force-delete/{id}', 'force_delete')->middleware('hasRoles:admin');
     });
 
     // Reaction-Types
-    Route::prefix('reaction-types')->controller(ReactionTypeController::class)->middleware(['isActive', 'verifiedEmail'])->group(function () {
+    Route::prefix('reaction-types')->controller(ReactionTypeController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware('hasRoles:admin,manager');
         Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
         Route::delete('force-delete/{id}', 'force_delete')->middleware('hasRoles:admin');
@@ -80,9 +74,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('users')->controller(UserController::class)->group(function () {
         Route::get('deleted', 'deleted')->middleware('hasRoles:admin');
         Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
-        Route::delete('force-delete/{id}', 'force_delete')->middleware(['hasRoles:admin', 'isActive']);
-        Route::get('activate/{id}', 'active')->middleware('hasRoles:admin,manager', 'isActive');
-        Route::get('deactivate/{id}', 'deactive')->middleware('hasRoles:admin,manager', 'isActive');
+        Route::delete('force-delete/{id}', 'force_delete')->middleware(['hasRoles:admin']);
+        Route::get('activate/{id}', 'activate')->middleware('hasRoles:admin,manager');
+        Route::get('deactivate/{id}', 'deactivate')->middleware('hasRoles:admin,manager');
     });
 
     // Dashboard
