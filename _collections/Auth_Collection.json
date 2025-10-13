@@ -165,7 +165,7 @@
 						{
 							"name": "Change Photo",
 							"request": {
-								"method": "PUT",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",

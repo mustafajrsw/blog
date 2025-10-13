@@ -225,7 +225,6 @@
                 <div class="detail-row">
                     <span class="detail-label">IP Address:</span>
                     <span class="detail-value">{{$loginInfo['ip']}}
-                        <span style="font-size: 12px; color: #6c757d;">(Approximate location: {{$location}})</span>
                     </span>
                 </div>
 
