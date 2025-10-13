@@ -1,9 +1,8 @@
-parameters:
-    level: 6 # 0 = loose, 9 = max strictness, 6 is a good middle ground
-    paths:
-        - app
-        - database
-    ignoreErrors:
-        - '#Call to an undefined method Illuminate\\Support\\.*#' # Ignore some common Laravel dynamic methods
-    reportUnmatchedIgnoredErrors: true
-    inferPrivatePropertyTypeFromConstructor: true
+{
+  "parameters": {
+    "paths": [
+      "app"
+    ],
+    "level": 5
+  }
+}

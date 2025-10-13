@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12 Standard">
+  <description>PSR12 Coding Standard for Laravel App</description>
+  <rule ref="PSR12"/>
+  <file>app/</file>
+</ruleset>
