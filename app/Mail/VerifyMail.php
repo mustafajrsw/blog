@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
@@ -13,17 +14,12 @@ class VerifyMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
-
-    public $verificationUrl;
-
     /**
      * Create a new message instance.
      */
-    public function __construct($user, string $verificationUrl)
+    public function __construct(public User $user, public string $verificationUrl)
     {
-        $this->user = $user;
-        $this->verificationUrl = $verificationUrl;
+        //
     }
 
     /**
