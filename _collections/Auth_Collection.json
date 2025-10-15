@@ -1,881 +1,881 @@
 {
-	"info": {
-		"_postman_id": "96d2653e-9cb2-4e74-8d63-4243cca50852",
-		"name": "Auth",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "48220399",
-		"_collection_link": "https://moda01148990430-8219783.postman.co/workspace/MoDa-R4BIA's-Workspace~7af2d1d9-30f7-4db5-8e31-09ba58b18a2c/collection/48220399-96d2653e-9cb2-4e74-8d63-4243cca50852?action=share&source=collection_link&creator=48220399"
-	},
-	"item": [
-		{
-			"name": "With Authorization",
-			"item": [
-				{
-					"name": "Logout",
-					"item": [
-						{
-							"name": "Session",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/logout/4",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"logout",
-										"4"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Current",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/logout/current",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"logout",
-										"current"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "All",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/logout/all",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"logout",
-										"all"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Others",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/logout/others",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"logout",
-										"others"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Profile",
-					"item": [
-						{
-							"name": "Show Profile",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/profile",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"profile"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Change Photo",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/profile/change-photo",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"profile",
-										"change-photo"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update Profile",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/profile",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"profile"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Change Password",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/change-password",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"change-password"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Sessions",
-					"item": [
-						{
-							"name": "Active",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/sessions/active",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"sessions",
-										"active"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Current",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/sessions/current",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"sessions",
-										"current"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Others",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/sessions/others",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"sessions",
-										"others"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Show",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/sessions/2",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"sessions",
-										"2"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			],
-			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "{{api_web_token}}",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {},
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {},
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Without Authorization",
-			"item": [
-				{
-					"name": "Emails",
-					"item": [
-						{
-							"name": "Verify",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/email/verify",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"email",
-										"verify"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Re-Verify",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base_api_auth}}/email/re-verify",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"email",
-										"re-verify"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "testing",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": []
-								},
-								"url": {
-									"raw": "{{base_api}}/send-mail",
-									"host": [
-										"{{base_api}}"
-									],
-									"path": [
-										"send-mail"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Passwords",
-					"item": [
-						{
-							"name": "Reset",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "email",
-											"value": "mustafaelsayedfouda@hotmail.com",
-											"description": "admin",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "ularson@example.org",
-											"description": "manager",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "email",
-											"value": "andre62@example.net",
-											"description": "user",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "password",
-											"value": "password",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_api_auth}}/password/reset",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"password",
-										"reset"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Forgot",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "email",
-											"value": "mustafaelsayedfouda@hotmail.com",
-											"description": "admin",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "ularson@example.org",
-											"description": "manager",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "email",
-											"value": "andre62@example.net",
-											"description": "user",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "password",
-											"value": "password",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_api_auth}}/password/forgot",
-									"host": [
-										"{{base_api_auth}}"
-									],
-									"path": [
-										"password",
-										"forgot"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "register",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Created User 1",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "moda01148990430@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "mobile",
-									"value": "01234567891",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "password",
-									"type": "text"
-								},
-								{
-									"key": "password_confirmation",
-									"value": "password",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_api_auth}}/register",
-							"host": [
-								"{{base_api_auth}}"
-							],
-							"path": [
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "web-login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "email",
-									"value": "mustafaelsayedfouda@hotmail.com",
-									"description": "admin",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "ularson@example.org",
-									"description": "manager",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "email",
-									"value": "andre62@example.net",
-									"description": "user",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "password",
-									"value": "password",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_api_auth}}/web-login",
-							"host": [
-								"{{base_api_auth}}"
-							],
-							"path": [
-								"web-login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "mobile-login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "email",
-									"value": "admin@example.com",
-									"description": "admin",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "email",
-									"value": "ularson@example.org",
-									"description": "manager",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "email",
-									"value": "andre62@example.net",
-									"description": "user",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "password",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_api_auth}}/mobile-login",
-							"host": [
-								"{{base_api_auth}}"
-							],
-							"path": [
-								"mobile-login"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"auth": {
-				"type": "noauth"
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"packages": {},
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"packages": {},
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"requests": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"requests": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base",
-			"value": ""
-		},
-		{
-			"key": "base_api",
-			"value": ""
-		},
-		{
-			"key": "base_api_auth",
-			"value": ""
-		},
-		{
-			"key": "api_web_token",
-			"value": ""
-		},
-		{
-			"key": "api_mobile_token",
-			"value": ""
-		}
-	]
+    "info": {
+        "_postman_id": "96d2653e-9cb2-4e74-8d63-4243cca50852",
+        "name": "Auth",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "48220399",
+        "_collection_link": "https://moda01148990430-8219783.postman.co/workspace/MoDa-R4BIA's-Workspace~7af2d1d9-30f7-4db5-8e31-09ba58b18a2c/collection/48220399-96d2653e-9cb2-4e74-8d63-4243cca50852?action=share&source=collection_link&creator=48220399"
+    },
+    "item": [
+        {
+            "name": "With Authorization",
+            "item": [
+                {
+                    "name": "Logout",
+                    "item": [
+                        {
+                            "name": "Session",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/logout/4",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "logout",
+                                        "4"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Current",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/logout/current",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "logout",
+                                        "current"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "All",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/logout/all",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "logout",
+                                        "all"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Others",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/logout/others",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "logout",
+                                        "others"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Profile",
+                    "item": [
+                        {
+                            "name": "Show Profile",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/profile",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "profile"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Change Photo",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/profile/change-photo",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "profile",
+                                        "change-photo"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Profile",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/profile",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "profile"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Change Password",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/change-password",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "change-password"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Sessions",
+                    "item": [
+                        {
+                            "name": "Active",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/sessions/active",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "sessions",
+                                        "active"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Current",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/sessions/current",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "sessions",
+                                        "current"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Others",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/sessions/others",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "sessions",
+                                        "others"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Show",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/sessions/2",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "sessions",
+                                        "2"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": [
+                    {
+                        "key": "token",
+                        "value": "{{api_web_token}}",
+                        "type": "string"
+                    }
+                ]
+            },
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {},
+                        "exec": [
+                            ""
+                        ]
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {},
+                        "exec": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Without Authorization",
+            "item": [
+                {
+                    "name": "Emails",
+                    "item": [
+                        {
+                            "name": "Verify",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/email/verify/{token}",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "email",
+                                        "verify"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Re-Verify",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_api_auth}}/email/re-verify",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "email",
+                                        "re-verify"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "testing",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "urlencoded",
+                                    "urlencoded": []
+                                },
+                                "url": {
+                                    "raw": "{{base_api}}/send-mail",
+                                    "host": [
+                                        "{{base_api}}"
+                                    ],
+                                    "path": [
+                                        "send-mail"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Passwords",
+                    "item": [
+                        {
+                            "name": "Reset",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "urlencoded",
+                                    "urlencoded": [
+                                        {
+                                            "key": "email",
+                                            "value": "mustafaelsayedfouda@hotmail.com",
+                                            "description": "admin",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "ularson@example.org",
+                                            "description": "manager",
+                                            "type": "text",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "andre62@example.net",
+                                            "description": "user",
+                                            "type": "text",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "password",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_api_auth}}/password/reset",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "password",
+                                        "reset"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Forgot",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "urlencoded",
+                                    "urlencoded": [
+                                        {
+                                            "key": "email",
+                                            "value": "mustafaelsayedfouda@hotmail.com",
+                                            "description": "admin",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "ularson@example.org",
+                                            "description": "manager",
+                                            "type": "text",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "andre62@example.net",
+                                            "description": "user",
+                                            "type": "text",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "password",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_api_auth}}/password/forgot",
+                                    "host": [
+                                        "{{base_api_auth}}"
+                                    ],
+                                    "path": [
+                                        "password",
+                                        "forgot"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "name",
+                                    "value": "Created User 1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "moda01148990430@gmail.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "mobile",
+                                    "value": "01234567891",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "password",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "password",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_api_auth}}/register",
+                            "host": [
+                                "{{base_api_auth}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "login/web",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "email",
+                                    "value": "mustafaelsayedfouda@hotmail.com",
+                                    "description": "admin",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "ularson@example.org",
+                                    "description": "manager",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "andre62@example.net",
+                                    "description": "user",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "password",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_api_auth}}/login/web",
+                            "host": [
+                                "{{base_api_auth}}"
+                            ],
+                            "path": [
+                                "web-login"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "login/mobile",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "email",
+                                    "value": "admin@example.com",
+                                    "description": "admin",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "ularson@example.org",
+                                    "description": "manager",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "andre62@example.net",
+                                    "description": "user",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "password",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_api_auth}}/login/mobile",
+                            "host": [
+                                "{{base_api_auth}}"
+                            ],
+                            "path": [
+                                "mobile-login"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "auth": {
+                "type": "noauth"
+            },
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "type": "text/javascript",
+                        "packages": {},
+                        "exec": [
+                            ""
+                        ]
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "type": "text/javascript",
+                        "packages": {},
+                        "exec": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base",
+            "value": ""
+        },
+        {
+            "key": "base_api",
+            "value": ""
+        },
+        {
+            "key": "base_api_auth",
+            "value": ""
+        },
+        {
+            "key": "api_web_token",
+            "value": ""
+        },
+        {
+            "key": "api_mobile_token",
+            "value": ""
+        }
+    ]
 }

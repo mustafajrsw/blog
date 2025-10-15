@@ -16,7 +16,7 @@ class ResetPasswordMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public User $user, public string $resetUrl)
+    public function __construct(public User $user, public string $token)
     {
         //
     }
@@ -36,12 +36,11 @@ class ResetPasswordMail extends Mailable
      */
     public function content(): Content
     {
+        $url = url("/reset-password?token={$this->token}");
+
         return new Content(
             view: 'mails.reset-password',
-            with: [
-                'user' => $this->user,
-                'resetUrl' => $this->resetUrl,
-            ],
+            with: ['url' => $url]
         );
     }
 

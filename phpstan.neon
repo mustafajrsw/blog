@@ -1,8 +1,7 @@
-{
-  "parameters": {
-    "paths": [
-      "app"
-    ],
-    "level": 5
-  }
-}
+includes:
+  - vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+  level: 5
+  paths:
+    - app

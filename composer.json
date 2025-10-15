@@ -62,8 +62,8 @@
             "@php artisan test"
         ],
         "pint": "vendor/bin/pint",
-        "phpstan": "vendor/bin/phpstan analyse"
-        },
+        "phpstan": "vendor/bin/phpstan analyse --no-progress --memory-limit=1G"
+    },
     "extra": {
         "laravel": {
             "dont-discover": []

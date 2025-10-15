@@ -17,13 +17,45 @@ Route::get('/', function () {
 
 Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
-    Route::post('web-login', 'web_login');
-    Route::post('mobile-login', 'mobile_login');
-    Route::get('email/verify', 'verify_email');
-    Route::get('email/re-verify', 're_verify_email');
-    Route::post('password/reset', 'reset_password');
+    Route::post('login/{platform}', 'login')
+        ->whereIn('platform', ['web', 'mobile']);
     Route::post('password/forgot', 'forgot_password');
+    Route::post('password/reset', 'reset_password');
+});
 
+Route::prefix('auth')->controller(AuthController::class)->middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function () {
+
+    // Email Verification
+    Route::prefix('email')->group(function () {
+        Route::get('verify/{token}', 'verify_email');
+        Route::get('re-verify', 're_verify_email');
+    });
+
+    // All Sessions
+    Route::prefix('sessions')->group(function () {
+        Route::get('active', 'active_sessions')->middleware('tokenType:web');
+        Route::get('current', 'current_session');
+        Route::get('others', 'other_sessions');
+        Route::get('{id}', 'show_session')->middleware('hasRoles:admin,manager');
+    });
+
+    // logout
+    Route::prefix('logout')->group(function () {
+        Route::post('all', 'logout_all')->middleware('tokenType:web');
+        Route::post('current', 'logout_current');
+        Route::post('others', 'logout_others');
+        Route::get('{id}', 'logout_session')->middleware('hasRoles:admin,manager');
+    });
+
+    // Profile
+    Route::prefix('profile')->group(function () {
+        Route::get('', 'show_profile');
+        Route::put('', 'update_profile');
+        Route::post('change-photo', 'change_photo');
+    });
+
+    // Change password
+    Route::put('change-password', 'change_password');
 });
 
 Route::middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function () {
@@ -99,33 +131,4 @@ Route::middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function
         ]
     );
 
-    // Auth
-    Route::prefix('auth')->controller(AuthController::class)->middleware(['isActive', 'verifiedEmail'])->group(function () {
-
-        // All Sessions
-        Route::prefix('sessions')->group(function () {
-            Route::get('active', 'active_sessions')->middleware('tokenType:web');
-            Route::get('current', 'current_session');
-            Route::get('others', 'other_sessions');
-            Route::get('{id}', 'show_session')->middleware('hasRoles:admin,manager');
-        });
-
-        // logout
-        Route::prefix('logout')->group(function () {
-            Route::post('all', 'logout_all')->middleware('tokenType:web');
-            Route::post('current', 'logout_current');
-            Route::post('others', 'logout_others');
-            Route::get('{id}', 'logout_session')->middleware('hasRoles:admin,manager');
-        });
-
-        // Profile
-        Route::prefix('profile')->group(function () {
-            Route::get('', 'show_profile');
-            Route::put('', 'update_profile');
-            Route::post('change-photo', 'change_photo');
-        });
-
-        // Change password
-        Route::put('change-password', 'change_password');
-    });
 });

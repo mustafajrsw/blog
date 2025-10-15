@@ -139,7 +139,7 @@
             <p>To reset your password, click the button below:</p>
 
             <div style="text-align: center;">
-                <a href="{{ $resetUrl }}" class="reset-button">Reset Password</a>
+                <a href="{{ $url }}" class="reset-button">Reset Password</a>
             </div>
 
             <div class="expiry-notice">
@@ -148,7 +148,7 @@
 
                 <div class="alternative-link">
                     <p>If the button above doesn't work, copy and paste the following link into your browser:</p>
-                    <p><a href="{{ $resetUrl }}" class="link-text">{{ $resetUrl }}</a></p>
+                    <p><a href="{{ $url }}" class="link-text">{{ $url }}</a></p>
                 </div>
 
             <p>If you have any questions, feel free to contact our support team.</p>

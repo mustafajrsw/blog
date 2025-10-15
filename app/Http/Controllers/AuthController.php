@@ -6,21 +6,22 @@ use App\Http\Requests\Auth\ForgotPasswordRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\ResetPasswordRequest;
-use App\Mail\ResetPasswordMail;
-use App\Mail\VerifyMail;
-use App\Models\User;
+use App\Http\Requests\Auth\VerifyEmailRequest;
 use App\Services\Auth\LoginService;
+use App\Services\Auth\PasswordService;
+use App\Services\Auth\RegisterService;
+use App\Services\Auth\VerifyService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Request;
 
 class AuthController extends Controller
 {
-    public function __construct(protected LoginService $loginService) {}
+    public function __construct(
+        protected LoginService $loginService,
+        protected RegisterService $registerService,
+        protected PasswordService $passwordService,
+        protected VerifyService $verifyService
+    ) {}
 
     /**
      * Register a new user
@@ -28,257 +29,59 @@ class AuthController extends Controller
     public function register(RegisterRequest $request): JsonResponse
     {
         $data = $request->validated();
-        $user = User::create($data)
-            ->forceFill([
-                'role' => 'user',
-                'email_verification_token' => Str::random(64),
-                'email_verification_expires_at' => now()->addHours(1),
-            ]);
 
-        $user->save();
-        $verificationUrl = url("/api/auth/email/verify?token={$user->email_verification_token}");
-
-        Mail::to($user->email)->send(new VerifyMail($user, $verificationUrl));
-
-        return $this->success([
-            'message' => 'User registered successfully. Please check your email to verify your account.',
-            'verify_url' => $verificationUrl,
-        ], 201);
+        return $this->registerService->handle($data);
     }
 
     /**
      * Handle forgot password request
      */
-    public function forgotPassword(ForgotPasswordRequest $request): JsonResponse
+    public function forgot_password(ForgotPasswordRequest $request): JsonResponse
     {
-        $user = User::where('email', $request->email)->first();
+        $data = $request->validated();
 
-        if (! $user) {
-            return $this->fail(statusCode: 404);
-        }
-
-        $token = Str::random(64);
-
-        DB::table('password_reset_tokens')->updateOrInsert(
-            ['email' => $user->email],
-            [
-                'token' => Hash::make($token),
-                'created_at' => now(),
-            ]
-        );
-
-        $resetUrl = url('/api/auth/password/reset?token='.$token.'&email='.urlencode($user->email));
-        Mail::to($user->email)->send(new ResetPasswordMail($user, $resetUrl));
-
-        return $this->success();
+        return $this->passwordService->forgot($data);
     }
 
     /**
      * Handle reset password confirmation
      */
-    public function resetPassword(ResetPasswordRequest $request): JsonResponse
+    public function reset_password(ResetPasswordRequest $request): JsonResponse
     {
+        $data = $request->validated();
 
-        $record = DB::table('password_reset_tokens')
-            ->where('email', $request->email)
-            ->first();
-
-        if (! $record) {
-            return $this->fail(['message' => 'Invalid or expired token'], 400);
-        }
-
-        if (Carbon::parse($record->created_at)->addHour()->isPast()) {
-            return $this->fail(['message' => 'Token has expired'], 400);
-        }
-
-        if (! Hash::check($request->token, $record->token)) {
-            return $this->fail(['message' => 'Invalid token'], 400);
-        }
-
-        $user = User::where('email', $request->email)->firstOrFail();
-        // $user->update(['password' => Hash::make($request->password)]);
-        $user->update(['password' => $request->password]);
-
-        DB::table('password_reset_tokens')->where('email', $request->email)->delete();
-
-        return $this->success();
+        return $this->passwordService->reset($data);
     }
 
     /**
-     * Extract login environment info.
+     * Login a user
      */
-    protected function getLoginInfo(Request $request): array
+    public function login(LoginRequest $request, string $platform): JsonResponse
     {
-        return [
-            'ip' => $request->ip(),
-            'user_agent' => $request->userAgent(),
-            'device' => $this->detectDevice($request->userAgent()),
-            'login_time' => now(),
-        ];
+        return $this->loginService->handle(
+            $request->validated(),
+            $platform,
+            $request->ip(),
+            $request->userAgent(),
+        );
     }
-
-    /**
-     * Simple device detector (minimal dependency approach)
-     */
-    protected function detectDevice(string $userAgent): string
-    {
-        if (preg_match('/mobile/i', $userAgent)) {
-            return 'Mobile Device';
-        }
-        if (preg_match('/tablet/i', $userAgent)) {
-            return 'Tablet';
-        }
-        if (preg_match('/windows|macintosh|linux/i', $userAgent)) {
-            return 'Desktop';
-        }
-
-        return 'Unknown Device';
-    }
-
-    public function web_login(LoginRequest $request): JsonResponse
-    {
-        return $this->loginService->handle($request, 'web');
-    }
-
-    public function mobile_login(LoginRequest $request): JsonResponse
-    {
-        return $this->loginService->handle($request, 'mobile');
-    }
-
-    // public function login(LoginRequest $request, string $platform): JsonResponse
-    // {
-    //     $data = $request->validated();
-
-    //     if (! Auth::attempt($data)) {
-    //         return $this->fail(statusCode: 401);
-    //     }
-
-    //     $user = Auth::user();
-
-    //     $abilities = AbilityGenerator::generate($user->role, $platform);
-    //     $token = $user->createToken($platform, $abilities);
-    //     $user['token'] = $token->plainTextToken;
-
-    //     $loginInfo = $this->getLoginInfo($request);
-
-    //     Mail::to($user->email)->send(new LoggedInMail($user, $loginInfo));
-
-    //     return $this->success($user);
-    // }
-    /**
-     * Web login
-     *
-     * Validate login credentials and return user with token if valid
-     */
-    // public function web_login(LoginRequest $request): JsonResponse
-    // {
-    //     $data = $request->validated();
-    //     $auth = Auth::attempt($data);
-    //     if ($auth) {
-    //         $user = Auth::user();
-    //         $abilities = AbilityGenerator::generate($user->role, 'web');
-    //         $token = $user->createToken('web', $abilities);
-    //         $user['token'] = $token->plainTextToken;
-    //         Mail::to($user['email'])->send(new LoggedInMail($user));
-
-    //         return $this->success($user);
-    //     }
-
-    //     return $this->fail(statusCode: 401);
-    // }
-
-    /**
-     * Mobile login
-     *
-     * Validate login credentials and return user with token if valid
-     */
-    // public function mobile_login(LoginRequest $request): JsonResponse
-    // {
-    //     $data = $request->validated();
-    //     $auth = Auth::attempt($data);
-    //     if ($auth) {
-    //         $user = Auth::user();
-    //         $abilities = AbilityGenerator::generate($user->role, 'mobile');
-    //         $token = $user->createToken('mobile', $abilities);
-    //         $user['token'] = $token->plainTextToken;
-    //         // Send email to user
-    //         Mail::to($user['email'])->send(new LoggedInMail($user));
-
-    //         return $this->success($user);
-    //     }
-
-    //     return $this->fail(statusCode: 401);
-    // }
 
     /**
      * Verify email address of user
      */
-    public function verify_email(Request $request): JsonResponse
+    public function verify_email(VerifyEmailRequest $request): JsonResponse
     {
-        $token = $request->query('token');
-        $user = User::where('email_verification_token', $token)->first();
-        if (! $user) {
-            $data = [
-                'message' => 'Invalid verification token.',
-            ];
+        $token = $request->input('token');
 
-            return $this->fail($data, 400);
-        }
-
-        if (! $user->is_active) {
-            $data = [
-                'message' => 'User is not active. Please contact support.',
-            ];
-
-            return $this->fail($data, 401);
-        }
-
-        if ($user->hasVerifiedEmail()) {
-            $data = [
-                'message' => 'Email already verified.',
-            ];
-
-            return $this->success($data, 200);
-        }
-
-        if ($user->email_verification_expires_at && $user->email_verification_expires_at->isPast()) {
-            return $this->fail('Verification link expired.', 410);
-        }
-
-        $user->forceFill([
-            'email_verified_at' => now(),
-            'email_verification_token' => null,
-            'email_verification_expires_at' => null,
-        ])->save();
-
-        return $this->success();
+        return $this->verifyService->verify($token);
     }
 
-    public function resendVerification(Request $request): JsonResponse
+    public function re_verify_email(): JsonResponse
     {
-        $user = $request->user();
+        $user = auth()->user();
+        dd($user);
 
-        if ($user->hasVerifiedEmail()) {
-            $data = [
-                'message' => 'Email already verified.',
-            ];
-
-            return $this->success($data, 200);
-        }
-
-        $user->forceFill([
-            'email_verification_token' => Str::random(64),
-            'email_verification_expires_at' => now()->addHours(1),
-        ]);
-        $user->save();
-
-        $verificationUrl = url("/api/auth/email/verify?token={$user->email_verification_token}");
-        Mail::to($user->email)->send(new VerifyMail($user, $verificationUrl));
-
-        return $this->success([
-            'message' => 'Verification email resent successfully.',
-            'verify_url' => $verificationUrl,
-        ]);
+        return $this->verifyService->resend($user);
     }
 
     // Session Management Routes

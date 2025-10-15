@@ -14,7 +14,6 @@ class LoggedInMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-
     /**
      * Create a new message instance.
      */
@@ -56,8 +55,8 @@ class LoggedInMail extends Mailable
     public function attachments(): array
     {
         return [
-            Attachment::fromStorageDisk('public','test.txt'),
-            Attachment::fromStorageDisk('local','test.txt')->as('private.pdf'),
+            // Attachment::fromStorageDisk('public', 'test.txt'),
+            // Attachment::fromStorageDisk('local', 'test.txt')->as('private.pdf'),
         ];
     }
 }

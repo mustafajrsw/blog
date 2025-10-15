@@ -20,7 +20,7 @@ class verifiedEmailMiddleware
     {
         $user = $request->user();
         if (! $user || ! $user->email_verified_at) {
-            return $this->fail(403);
+            return $this->fail('Email not verified.', 403);
         }
 
         return $next($request);

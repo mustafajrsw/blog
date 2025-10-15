@@ -17,7 +17,7 @@ class VerifyMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public User $user, public string $verificationUrl)
+    public function __construct(public User $user)
     {
         //
     }
@@ -38,11 +38,13 @@ class VerifyMail extends Mailable
      */
     public function content(): Content
     {
+        $url = url("/api/email/verify/{$this->user->email_verification_token}");
+
         return new Content(
-            view: 'mails.verify-mail',
+            view: 'mails.verify-email',
             with: [
                 'user' => $this->user,
-                'verificationUrl' => $this->verificationUrl,
+                'url' => $url,
             ]
         );
     }

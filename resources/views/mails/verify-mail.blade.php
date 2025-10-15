@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="verify-button">
-                    <a href="{{ $verificationUrl }}">Verify Email Address</a>
+                    <a href="{{ $url }}">Verify Email Address</a>
                 </div>
 
                 <div class="expiry-notice">
@@ -149,7 +149,7 @@
 
                 <div class="alternative-link">
                     <p>If the button above doesn't work, copy and paste the following link into your browser:</p>
-                    <p><a href="{{ $verificationUrl }}" class="link-text">{{ $verificationUrl }}</a></p>
+                    <p><a href="{{ $url }}" class="link-text">{{ $url }}</a></p>
                 </div>
 
                 <div class="content" style="margin-top: 30px;">
