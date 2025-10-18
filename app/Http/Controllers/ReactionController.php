@@ -6,19 +6,20 @@ use App\Http\Requests\StoreReactionRequest;
 use App\Http\Requests\UpdateReactionRequest;
 use App\Http\Resources\ReactionResource;
 use App\Models\Reaction;
+use Illuminate\Http\JsonResponse;
 
 class ReactionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $this->authorize('viewAny', Reaction::class);
-        $reaction = Reaction::all();
-        $json_reaction = ReactionResource::collection($reaction);
+        $reactions = Reaction::all();
+        $json_reactions = ReactionResource::collection($reactions);
 
-        return $this->success($json_reaction);
+        return $this->success($json_reactions);
     }
 
     /**
@@ -32,7 +33,7 @@ class ReactionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReactionRequest $request)
+    public function store(StoreReactionRequest $request): JsonResponse
     {
         $this->authorize('create', Reaction::class);
         $data = $request->validated();

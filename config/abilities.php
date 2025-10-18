@@ -25,6 +25,16 @@ return [
             'deactivate',
         ],
 
+        'profiles' => [
+            'viewAny',
+            'view',
+            'create',
+            'update',
+            'delete',
+            'restore',
+            'forceDelete',
+        ],
+
         'posts' => [
             'viewAny',
             'view',

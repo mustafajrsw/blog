@@ -8,11 +8,19 @@ use App\Models\User;
 class ReactionTypePolicy
 {
     /**
+     * Create a new policy instance.
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasAbility('reaction_types:viewAny', ['admin', 'manager', 'user']);
+        return $user->hasAbility('reaction-types:viewAny', ['admin', 'manager', 'user']);
     }
 
     /**
@@ -20,8 +28,8 @@ class ReactionTypePolicy
      */
     public function view(User $user, ReactionType $reactionType): bool
     {
-        return $user->hasAbility('reaction_types:view', ['admin', 'manager'])
-            || ($user->hasAbility('reaction_types:view', ['user']) && $user->id === $reactionType->user_id);
+        return $user->hasAbility('reaction-types:view', ['admin', 'manager'])
+            || ($user->hasAbility('reaction-types:view', ['user']) && $user->id === $reactionType->user_id);
     }
 
     /**
@@ -29,7 +37,7 @@ class ReactionTypePolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasAbility('reaction_types:create', ['admin', 'manager', 'user']);
+        return $user->hasAbility('reaction-types:create', ['admin', 'manager', 'user']);
     }
 
     /**
@@ -37,8 +45,8 @@ class ReactionTypePolicy
      */
     public function update(User $user, ReactionType $reactionType): bool
     {
-        return $user->hasAbility('reaction_types:update', ['admin', 'manager'])
-            || ($user->hasAbility('reaction_types:update', ['user']) && $user->id === $reactionType->user_id);
+        return $user->hasAbility('reaction-types:update', ['admin', 'manager'])
+            || ($user->hasAbility('reaction-types:update', ['user']) && $user->id === $reactionType->user_id);
     }
 
     /**
@@ -46,8 +54,8 @@ class ReactionTypePolicy
      */
     public function delete(User $user, ReactionType $reactionType): bool
     {
-        return $user->hasAbility('reaction_types:delete', ['admin', 'manager'])
-            || ($user->hasAbility('reaction_types:delete', ['user']) && $user->id === $reactionType->user_id);
+        return $user->hasAbility('reaction-types:delete', ['admin', 'manager'])
+            || ($user->hasAbility('reaction-types:delete', ['user']) && $user->id === $reactionType->user_id);
     }
 
     /**
@@ -55,7 +63,7 @@ class ReactionTypePolicy
      */
     public function restore(User $user, ReactionType $reactionType): bool
     {
-        return $user->hasAbility('reaction_types:restore', ['admin']);
+        return $user->hasAbility('reaction-types:restore', ['admin']);
     }
 
     /**
@@ -63,6 +71,6 @@ class ReactionTypePolicy
      */
     public function forceDelete(User $user, ReactionType $reactionType): bool
     {
-        return $user->hasAbility('reaction_types:forceDelete', ['admin']);
+        return $user->hasAbility('reaction-types:forceDelete', ['admin']);
     }
 }

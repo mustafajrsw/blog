@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Auth\Requests\ChangePasswordRequest;
 use App\Http\Requests\Auth\ForgotPasswordRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -12,7 +13,7 @@ use App\Services\Auth\PasswordService;
 use App\Services\Auth\RegisterService;
 use App\Services\Auth\VerifyService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -53,6 +54,14 @@ class AuthController extends Controller
         return $this->passwordService->reset($data);
     }
 
+    public function change_password(ChangePasswordRequest $request): JsonResponse
+    {
+        $data = $request->validated();
+        $user = $request->user();
+
+        return $this->passwordService->change($user, $data);
+    }
+
     /**
      * Login a user
      */
@@ -71,7 +80,7 @@ class AuthController extends Controller
      */
     public function verify_email(VerifyEmailRequest $request): JsonResponse
     {
-        $token = $request->input('token');
+        $token = $request->token;
 
         return $this->verifyService->verify($token);
     }
@@ -79,7 +88,6 @@ class AuthController extends Controller
     public function re_verify_email(): JsonResponse
     {
         $user = auth()->user();
-        dd($user);
 
         return $this->verifyService->resend($user);
     }

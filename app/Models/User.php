@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,10 +22,8 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
-        'mobile',
     ];
 
     /**
@@ -47,10 +46,21 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'email_verification_expires_at' => 'datetime',
         ];
     }
 
     // Relationships
+
+    /**
+     * Get the associated Profile
+     *
+     * @return \App\Models\Profile
+     */
+    public function profile(): HasOne
+    {
+        return $this->hasOne(Profile::class);
+    }
 
     /**
      * Get all of the user's posts.

@@ -61,15 +61,14 @@ class UserController extends Controller
         $updated = $user->update($data);
 
         if ($updated && isset($data['email']) && $data['email'] !== $originalEmail) {
-            // Reset verification state
             $user->forceFill([
                 'email_verified_at' => null,
-                'email_verification_token' => Str::uuid(),
+                'email_verification_token' => Str::random(64),
+                'email_verification_expires_at' => now()->addHour(),
             ])->save();
 
             // Send verification mail
-            $verificationUrl = url('/api/auth/email/verify?token='.$user->email_verification_token);
-            Mail::to($user->email)->send(new VerifyMail($user, $verificationUrl));
+            Mail::to($user->email)->send(new VerifyMail($user));
         }
 
         return $updated ? $this->success() : $this->fail();

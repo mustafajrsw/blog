@@ -12,6 +12,30 @@
 			"item": [
 				{
 					"name": "All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1724,8 +1748,9 @@
 								},
 								{
 									"key": "email",
-									"value": "mustafa01148990430@gmail.com",
-									"type": "text"
+									"value": "",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "password",
@@ -1738,6 +1763,11 @@
 									"value": "0123456879",
 									"type": "number",
 									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text"
 								}
 							]
 						},
@@ -1771,13 +1801,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_api}}/users/50",
+							"raw": "{{base_api}}/users/2",
 							"host": [
 								"{{base_api}}"
 							],
 							"path": [
 								"users",
-								"50"
+								"2"
 							]
 						}
 					},
@@ -1843,35 +1873,6 @@
 					"response": []
 				},
 				{
-					"name": "Sample",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{base_api}}/users/sample",
-							"host": [
-								"{{base_api}}"
-							],
-							"path": [
-								"users",
-								"sample"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Restore",
 					"request": {
 						"method": "GET",
@@ -1888,14 +1889,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_api}}/users/restore/50",
+							"raw": "{{base_api}}/users/restore/2",
 							"host": [
 								"{{base_api}}"
 							],
 							"path": [
 								"users",
 								"restore",
-								"50"
+								"2"
 							]
 						}
 					},
@@ -1951,14 +1952,401 @@
 							]
 						},
 						"url": {
-							"raw": "{{base_api}}/users/activate/1",
+							"raw": "{{base_api}}/users/activate/3",
 							"host": [
 								"{{base_api}}"
 							],
 							"path": [
 								"users",
 								"activate",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "De-activate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/users/deactivate/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"users",
+								"deactivate",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/profiles",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/profiles/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "first_name",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "namee",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "username",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "bio",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01010101011",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "wrer234",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "dasd",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "sdad",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "2001/07/25",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/profiles",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "first_name",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "namee",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "username",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "bio",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01010101011",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "wrer234",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "dasd",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "sdad",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "2001/07/25",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_api}}/profiles/1",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/profiles/3",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/profiles/force-delete/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles",
+								"force-delete",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/profiles/deleted",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_api}}/profiles/restore/50",
+							"host": [
+								"{{base_api}}"
+							],
+							"path": [
+								"profiles",
+								"restore",
+								"50"
 							]
 						}
 					},
@@ -2008,7 +2396,7 @@
 		},
 		{
 			"key": "api_web_token",
-			"value": "3|ukGou9ZwZYyAPpsDV1UcI7eguLmvIo40dHFkJ6sL364a30ae",
+			"value": "2|8ORCE9C7VCOLaYfcwT5tS1u7vXRqXy5QNEGycv99234fa62e",
 			"description": "admin"
 		},
 		{

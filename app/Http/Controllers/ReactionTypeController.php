@@ -6,13 +6,14 @@ use App\Http\Requests\StoreReactionTypeRequest;
 use App\Http\Requests\UpdateReactionTypeRequest;
 use App\Http\Resources\ReactionTypeResource;
 use App\Models\ReactionType;
+use Illuminate\Http\JsonResponse;
 
 class ReactionTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $this->authorize('viewAny', ReactionType::class);
         $reactionTypes = ReactionType::all();
@@ -32,7 +33,7 @@ class ReactionTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReactionTypeRequest $request)
+    public function store(StoreReactionTypeRequest $request): JsonResponse
     {
         $this->authorize('create', ReactionType::class);
         $data = $request->validated();
@@ -44,7 +45,7 @@ class ReactionTypeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ReactionType $reactionType)
+    public function show(ReactionType $reactionType): JsonResponse
     {
         $this->authorize('view', $reactionType);
 
@@ -65,7 +66,7 @@ class ReactionTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateReactionTypeRequest $request, ReactionType $reactionType)
+    public function update(UpdateReactionTypeRequest $request, ReactionType $reactionType): JsonResponse
     {
         $this->authorize('update', $reactionType);
         $new_data = $request->validated();
@@ -77,7 +78,7 @@ class ReactionTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ReactionType $reactionType)
+    public function destroy(ReactionType $reactionType): JsonResponse
     {
         $this->authorize('delete', $reactionType);
         $deleted = $reactionType->delete();
@@ -88,7 +89,7 @@ class ReactionTypeController extends Controller
     /**
      * Return a list of soft-deleted reaction types.
      */
-    public function deleted()
+    public function deleted(): JsonResponse
     {
         $this->authorize('viewAny', ReactionType::class);
         $deleted_reaction_types = ReactionType::query()->onlyTrashed()->get();
@@ -103,7 +104,7 @@ class ReactionTypeController extends Controller
      * @param  int  $id  The id of the comment to be restored.
      * @return string 'Success' if the comment was successfully restored, 'Failure' otherwise.
      */
-    public function restore($id)
+    public function restore($id): JsonResponse
     {
         $this->authorize('restore', ReactionType::class);
         $restored = ReactionType::query()->onlyTrashed()->where('id', $id)->restore();
@@ -117,7 +118,7 @@ class ReactionTypeController extends Controller
      * @param  int  $id  The id of the reaction type to be permanently deleted.
      * @return string 'Success' if the reaction type was successfully permanently deleted, 'Failure' otherwise.
      */
-    public function force_delete($id)
+    public function force_delete($id): JsonResponse
     {
         $this->authorize('forceDelete', ReactionType::class);
         $force_deleted = ReactionType::query()->onlyTrashed()->where('id', $id)->forceDelete();

@@ -6,13 +6,14 @@ use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
+use Illuminate\Http\JsonResponse;
 
 class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $this->authorize('viewAny', arguments: Comment::class);
         $comments = Comment::all();
@@ -33,7 +34,7 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCommentRequest $request)
+    public function store(StoreCommentRequest $request): JsonResponse
     {
         $this->authorize('create', Comment::class);
         $data = $request->validated();
@@ -46,13 +47,13 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Comment $comment)
+    public function show(Comment $comment): JsonResponse
     {
         $this->authorize('view', $comment);
         $comment->load(['post', 'user', 'replies', 'reactions']);
-        $comment_json = CommentResource::make($comment);
+        $comments_json = CommentResource::make($comment);
 
-        return $this->success($comment_json);
+        return $this->success($comments_json);
     }
 
     /**
@@ -66,7 +67,7 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCommentRequest $request, Comment $comment)
+    public function update(UpdateCommentRequest $request, Comment $comment): JsonResponse
     {
         $this->authorize('update', $comment);
         $new_data = $request->validated();
@@ -78,7 +79,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comment $comment)
+    public function destroy(Comment $comment): JsonResponse
     {
         $this->authorize('delete', $comment);
         $deleted = $comment->delete();
@@ -89,7 +90,7 @@ class CommentController extends Controller
     /**
      * Return a list of soft-deleted comments.
      */
-    public function deleted()
+    public function deleted(): JsonResponse
     {
         $this->authorize('viewAny', Comment::class);
         $deleted_comments = Comment::query()->onlyTrashed()->get();
@@ -104,7 +105,7 @@ class CommentController extends Controller
      * @param  int  $id  The id of the comment to be restored.
      * @return string 'Success' if the comment was successfully restored, 'Failure' otherwise.
      */
-    public function restore($id)
+    public function restore($id): JsonResponse
     {
         $this->authorize('restore', Comment::class);
         $restored = Comment::query()->onlyTrashed()->where('id', $id)->restore();
@@ -118,7 +119,7 @@ class CommentController extends Controller
      * @param  int  $id  The id of the comment to be permanently deleted.
      * @return string 'Success' if the comment was successfully permanently deleted, 'Failure' otherwise.
      */
-    public function force_delete($id)
+    public function force_delete($id): JsonResponse
     {
         $this->authorize('forceDelete', Comment::class);
         $force_deleted = Comment::query()->onlyTrashed()->where('id', $id)->forceDelete();

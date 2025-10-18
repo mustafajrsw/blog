@@ -18,11 +18,11 @@ class HasRolesMiddleware
      */
     public function handle(Request $request, Closure $next, string $roles): Response
     {
-        $routeRoles = explode(',', $roles);
-        $userRoles = $request->user()->currentAccessToken()->abilities;
 
-        if (! count(array_intersect($routeRoles, $userRoles))) {
-            return $this->fail(401);
+        $routeRoles = explode(',', $roles);
+        $userRole = $request->user()->role;
+        if (! in_array($userRole, $routeRoles, true)) {
+            return $this->fail('Unauthorized', 401);
         }
 
         return $next($request);

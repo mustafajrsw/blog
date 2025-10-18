@@ -25,4 +25,11 @@ class VerifyEmailRequest extends FormRequest
             'token' => 'required|string',
         ];
     }
+
+    public function validationData()
+    {
+        return array_merge($this->all(), [
+            'token' => $this->route('token'),
+        ]);
+    }
 }

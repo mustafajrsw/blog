@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostStatusController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReactionController;
 use App\Http\Controllers\ReactionTypeController;
 use App\Http\Controllers\ReplyController;
@@ -19,17 +20,23 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('login/{platform}', 'login')
         ->whereIn('platform', ['web', 'mobile']);
-    Route::post('password/forgot', 'forgot_password');
-    Route::post('password/reset', 'reset_password');
+
+    // Password
+    Route::prefix('password')->group(function () {
+        Route::put('change', 'change_password')->middleware(['auth:sanctum', 'isActive', 'verifiedEmail']);
+        Route::post('forgot', 'forgot_password')->middleware('isGuest:sanctum');
+        Route::post('reset', 'reset_password')->middleware('isGuest:sanctum');
+    });
+
+    // Email
+    Route::prefix('email')->group(function () {
+        Route::get('verify/{token}', 'verify_email')->middleware('isGuest:sanctum');
+        Route::get('re-verify', 're_verify_email')->middleware(['auth:sanctum', 'isActive']);
+    });
+
 });
 
 Route::prefix('auth')->controller(AuthController::class)->middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function () {
-
-    // Email Verification
-    Route::prefix('email')->group(function () {
-        Route::get('verify/{token}', 'verify_email');
-        Route::get('re-verify', 're_verify_email');
-    });
 
     // All Sessions
     Route::prefix('sessions')->group(function () {
@@ -54,8 +61,6 @@ Route::prefix('auth')->controller(AuthController::class)->middleware(['auth:sanc
         Route::post('change-photo', 'change_photo');
     });
 
-    // Change password
-    Route::put('change-password', 'change_password');
 });
 
 Route::middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function () {
@@ -111,23 +116,23 @@ Route::middleware(['auth:sanctum', 'isActive', 'verifiedEmail'])->group(function
         Route::get('deactivate/{id}', 'deactivate')->middleware('hasRoles:admin,manager');
     });
 
-    // Dashboard
-    // Route::prefix('dashboard')->controller(DashboardController::class)->group(function () {
-    //     Route::get('deleted', 'deleted');
-    //     Route::get('restore/{id}', 'restore');
-    //     Route::delete('force-delete/{id}', 'force_delete');
-    // });
+    // Profiles
+    Route::prefix('profiles')->controller(ProfileController::class)->group(function () {
+        Route::get('deleted', 'deleted')->middleware('hasRoles:admin,manager');
+        Route::get('restore/{id}', 'restore')->middleware('hasRoles:admin');
+        Route::delete('force-delete/{id}', 'force_delete')->middleware(['hasRoles:admin']);
+    });
 
-    // Posts, comments, reactions, users, replies
     Route::apiResources(
         [
             'post-statuses' => PostStatusController::class,
             'posts' => PostController::class,
             'comments' => CommentController::class,
-            'reaction-types' => ReactionTypeController::class,
             'replies' => ReplyController::class,
-            'users' => UserController::class,
+            'reaction-types' => ReactionTypeController::class,
             'reactions' => ReactionController::class,
+            'users' => UserController::class,
+            'profiles' => ProfileController::class,
         ]
     );
 

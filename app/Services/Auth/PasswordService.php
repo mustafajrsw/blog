@@ -57,11 +57,25 @@ class PasswordService extends BaseAuthService
         }
 
         User::where('email', $data['email'])->update([
-            'password' => $data['password'],
-            // 'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
 
         DB::table('password_reset_tokens')->where('email', $data['email'])->delete();
+
+        return $this->success();
+    }
+
+    public function change(User $user, array $data): JsonResponse
+    {
+        if (! Hash::check($data['current_password'], $user->password)) {
+            return $this->fail(['message' => 'Current password is incorrect.'], 403);
+        }
+
+        if ($data['current_password'] === $data['new_password']) {
+            return $this->fail(['message' => 'New password must be different from current one.'], 403);
+        }
+        $user->password = Hash::make($data['new_password']);
+        $user->save();
 
         return $this->success();
     }

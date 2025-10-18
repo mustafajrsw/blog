@@ -41,7 +41,7 @@ class VerifyMail extends Mailable
         $url = url("/api/email/verify/{$this->user->email_verification_token}");
 
         return new Content(
-            view: 'mails.verify-email',
+            view: 'mails.verify-mail',
             with: [
                 'user' => $this->user,
                 'url' => $url,

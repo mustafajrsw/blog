@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\HasRolesMiddleware;
 use App\Http\Middleware\IsActiveMiddleware;
+use App\Http\Middleware\isGuestMiddleware;
 use App\Http\Middleware\tokenTypeMiddleware;
 use App\Http\Middleware\verifiedEmailMiddleware;
 use Illuminate\Foundation\Application;
@@ -21,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'isActive' => IsActiveMiddleware::class,
             'tokenType' => tokenTypeMiddleware::class,
             'verifiedEmail' => verifiedEmailMiddleware::class,
+            'isGuest' => isGuestMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

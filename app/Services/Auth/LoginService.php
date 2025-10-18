@@ -12,6 +12,7 @@ class LoginService extends BaseAuthService
 {
     public function handle(array $credentials, string $platform, string $ip, string $userAgent): JsonResponse
     {
+
         if (! Auth::attempt($credentials)) {
             return $this->fail(statusCode: 401);
         }

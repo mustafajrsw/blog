@@ -6,13 +6,14 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
+use Illuminate\Http\JsonResponse;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $this->authorize('viewAny', Post::class);
         $posts = Post::all();
@@ -32,7 +33,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request)
+    public function store(StorePostRequest $request): JsonResponse
     {
         $this->authorize('create', Post::class);
         $data = $request->validated();
@@ -45,14 +46,13 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post): JsonResponse
     {
         $this->authorize('view', $post);
         $post->load(['post_status', 'user', 'comments', 'replies', 'reactions']);
         $post_json = PostResource::make($post);
 
         return $this->success($post_json);
-
     }
 
     /**
@@ -66,7 +66,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post): JsonResponse
     {
         $this->authorize('update', $post);
         $data = $request->validated();
@@ -78,7 +78,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post): JsonResponse
     {
         $this->authorize('delete', $post);
         $deleted = $post->delete();
@@ -89,7 +89,7 @@ class PostController extends Controller
     /**
      * Return a list of soft-deleted posts.
      */
-    public function deleted()
+    public function deleted(): JsonResponse
     {
         $this->authorize('viewAny', Post::class);
         $deleted_posts = Post::query()->onlyTrashed()->get();
@@ -104,7 +104,7 @@ class PostController extends Controller
      * @param  int  $id  The id of the post to be restored.
      * @return string 'Success' if the post was successfully restored, 'Failure' otherwise.
      */
-    public function restore($id)
+    public function restore($id): JsonResponse
     {
         $this->authorize('restore', Post::class);
         $restored = Post::query()->onlyTrashed()->where('id', $id)->restore();
@@ -118,7 +118,7 @@ class PostController extends Controller
      * @param  int  $id  The id of the post to be permanently deleted.
      * @return string 'Success' if the post was successfully permanently deleted, 'Failure' otherwise.
      */
-    public function force_delete($id)
+    public function force_delete($id): JsonResponse
     {
         $this->authorize('forceDelete', Post::class);
         $force_deleted = Post::query()->onlyTrashed()->where('id', $id)->forceDelete();

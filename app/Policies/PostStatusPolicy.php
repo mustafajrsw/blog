@@ -8,11 +8,19 @@ use App\Models\User;
 class PostStatusPolicy
 {
     /**
+     * Create a new policy instance.
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasAbility('post_statuses:viewAny', ['admin', 'manager', 'user']);
+        return $user->hasAbility('post-statuses:viewAny', ['admin', 'manager', 'user']);
     }
 
     /**
@@ -20,8 +28,8 @@ class PostStatusPolicy
      */
     public function view(User $user, PostStatus $postStatus): bool
     {
-        return $user->hasAbility('post_statuses:view', ['admin', 'manager'])
-            || ($user->hasAbility('post_statuses:view', ['user']) && $user->id === $postStatus->user_id);
+        return $user->hasAbility('post-statuses:view', ['admin', 'manager'])
+            || ($user->hasAbility('post-statuses:view', ['user']) && $user->id === $postStatus->user_id);
     }
 
     /**
@@ -29,7 +37,7 @@ class PostStatusPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasAbility('post_statuses:create', ['admin', 'manager', 'user']);
+        return $user->hasAbility('post-statuses:create', ['admin', 'manager', 'user']);
     }
 
     /**
@@ -37,8 +45,8 @@ class PostStatusPolicy
      */
     public function update(User $user, PostStatus $postStatus): bool
     {
-        return $user->hasAbility('post_statuses:update', ['admin', 'manager'])
-            || ($user->hasAbility('post_statuses:update', ['user']) && $user->id === $postStatus->user_id);
+        return $user->hasAbility('post-statuses:update', ['admin', 'manager'])
+            || ($user->hasAbility('post-statuses:update', ['user']) && $user->id === $postStatus->user_id);
     }
 
     /**
@@ -46,8 +54,8 @@ class PostStatusPolicy
      */
     public function delete(User $user, PostStatus $postStatus): bool
     {
-        return $user->hasAbility('post_statuses:delete', ['admin', 'manager'])
-            || ($user->hasAbility('post_statuses:delete', ['user']) && $user->id === $postStatus->user_id);
+        return $user->hasAbility('post-statuses:delete', ['admin', 'manager'])
+            || ($user->hasAbility('post-statuses:delete', ['user']) && $user->id === $postStatus->user_id);
     }
 
     /**
@@ -55,7 +63,7 @@ class PostStatusPolicy
      */
     public function restore(User $user, PostStatus $postStatus): bool
     {
-        return $user->hasAbility('post_statuses:restore', ['admin']);
+        return $user->hasAbility('post-statuses:restore', ['admin']);
     }
 
     /**
@@ -63,6 +71,6 @@ class PostStatusPolicy
      */
     public function forceDelete(User $user, PostStatus $postStatus): bool
     {
-        return $user->hasAbility('post_statuses:forceDelete', ['admin']);
+        return $user->hasAbility('post-statuses:forceDelete', ['admin']);
     }
 }

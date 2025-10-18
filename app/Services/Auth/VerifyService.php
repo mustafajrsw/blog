@@ -25,14 +25,16 @@ class VerifyService extends BaseAuthService
         if (! $user->is_active) {
             return $this->fail('User is not active. Please contact support.', 401);
         }
+
         if ($user->email_verification_expires_at->isPast()) {
             return $this->fail('Verification link expired.', 410);
         }
 
+        $user->markEmailAsVerified();
+
         $user->forceFill([
             'is_active' => true,
             'email_verification_token' => null,
-            'email_verified_at' => now(),
         ])->save();
 
         return $this->success();

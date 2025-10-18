@@ -1,0 +1,3061 @@
+{
+  "collection": {
+    "info": {
+      "name": "Full Laravel API (Enhanced)",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": "\ud83d\udd25 Professional Laravel REST API - merged Auth + Tables. Generated on 2025-10-18T15:35:22.918475Z\n\nIncludes Auth, Users, Profiles, Posts, Comments, Replies, Reactions, Reaction Types, and Post Statuses.\nCreated for Mustafa ElSayed Muhammed."
+    },
+    "item": [
+      {
+        "name": "Auth",
+        "description": "Authentication and session management (register, login, email verification, password reset, profile endpoints).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Authentication and session management (register, login, email verification, password reset, profile endpoints)."
+          },
+          {
+            "name": "POST Create Logout",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/logout/4",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "logout",
+                  "4"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Current",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/logout/current",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "logout",
+                  "current"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create All",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/logout/all",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "logout",
+                  "all"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Other",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/logout/others",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "logout",
+                  "others"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET Show Profile",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/profile",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "profile"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Change Photo",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/profile/change-photo",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "profile",
+                  "change-photo"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update Profile",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/profile",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "profile"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET Active",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/sessions/active",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "sessions",
+                  "active"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET Current",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/sessions/current",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "sessions",
+                  "current"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET Others",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/sessions/others",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "sessions",
+                  "others"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Session by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/sessions/2",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "sessions",
+                  "2"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Verify by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/email/verify/{token}",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "email",
+                  "verify",
+                  "{token}"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET Re-Verify",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/email/re-verify",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "email",
+                  "re-verify"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Reset",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/password/reset",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "password",
+                  "reset"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "email",
+                    "value": "mustafaelsayedfouda@hotmail.com",
+                    "description": "admin",
+                    "type": "text"
+                  },
+                  {
+                    "key": "email",
+                    "value": "ularson@example.org",
+                    "description": "manager",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "email",
+                    "value": "andre62@example.net",
+                    "description": "user",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Forgot",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/password/forgot",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "password",
+                  "forgot"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "email",
+                    "value": "mustafaelsayedfouda@hotmail.com",
+                    "description": "admin",
+                    "type": "text"
+                  },
+                  {
+                    "key": "email",
+                    "value": "ularson@example.org",
+                    "description": "manager",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "email",
+                    "value": "andre62@example.net",
+                    "description": "user",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST register",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/register",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "register"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "name",
+                    "value": "Created User 1",
+                    "type": "text"
+                  },
+                  {
+                    "key": "email",
+                    "value": "moda01148990430@gmail.com",
+                    "type": "text"
+                  },
+                  {
+                    "key": "mobile",
+                    "value": "01234567891",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password_confirmation",
+                    "value": "password",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST login/web",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/login/web",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "login",
+                  "web"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "email",
+                    "value": "mustafaelsayedfouda@hotmail.com",
+                    "description": "admin",
+                    "type": "text"
+                  },
+                  {
+                    "key": "email",
+                    "value": "ularson@example.org",
+                    "description": "manager",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "email",
+                    "value": "andre62@example.net",
+                    "description": "user",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST login/mobile",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/login/mobile",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "login",
+                  "mobile"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "email",
+                    "value": "admin@example.com",
+                    "description": "admin",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "email",
+                    "value": "ularson@example.org",
+                    "description": "manager",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "email",
+                    "value": "andre62@example.net",
+                    "description": "user",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Users",
+        "description": "User management endpoints (CRUD).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "User management endpoints (CRUD)."
+          },
+          {
+            "name": "GET All",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View User by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create User",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "name",
+                    "value": "name example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "email",
+                    "value": "email@example.com",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  },
+                  {
+                    "key": "mobile",
+                    "value": "0123456879",
+                    "type": "number"
+                  },
+                  {
+                    "key": "role",
+                    "value": "user",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update User",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "name",
+                    "value": "name example",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "email",
+                    "value": "mustafa01148990430@gmail.com",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "mobile",
+                    "value": "0123456879",
+                    "type": "number",
+                    "disabled": true
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Soft Delete User",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Force Delete Force Delete",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/force-delete/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "force-delete",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET List All Deleted",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/deleted",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "deleted"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET Sample User",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/sample",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "sample"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Restore by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/restore/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "restore",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Activate by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/users/activate/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "users",
+                  "activate",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "name",
+                    "value": "name example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "email",
+                    "value": "email@example.com",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "password",
+                    "type": "text"
+                  },
+                  {
+                    "key": "mobile",
+                    "value": "0123456879",
+                    "type": "number"
+                  },
+                  {
+                    "key": "role",
+                    "value": "user",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Profiles",
+        "description": "Profile management endpoints (CRUD).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Profile management endpoints (CRUD)."
+          }
+        ]
+      },
+      {
+        "name": "Posts",
+        "description": "Post management endpoints (CRUD).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Post management endpoints (CRUD)."
+          },
+          {
+            "name": "GET All",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Post by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Post",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "title",
+                    "value": "title example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "body",
+                    "value": "body example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "post_status_id",
+                    "value": "1",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update Post",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "title",
+                    "value": "title example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "body",
+                    "value": "body example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "post_status_id",
+                    "value": "1",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Soft Delete Post",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Force Delete Force Delete",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts/force-delete/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts",
+                  "force-delete",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET List All Deleted",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts/deleted",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts",
+                  "deleted"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Restore by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/posts/restore/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "posts",
+                  "restore",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Comments",
+        "description": "Comment management endpoints (CRUD).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Comment management endpoints (CRUD)."
+          },
+          {
+            "name": "GET All",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Comment by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Comment",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "comment",
+                    "value": "comment example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "post_id",
+                    "value": "10",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update Comment",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "comment",
+                    "value": "comment example",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Soft Delete Comment",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Force Delete Force Delete",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments/force-delete/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments",
+                  "force-delete",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET List All Deleted",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments/deleted",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments",
+                  "deleted"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Restore by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/comments/restore/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "comments",
+                  "restore",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Replies",
+        "description": "Reply management endpoints (CRUD).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Reply management endpoints (CRUD)."
+          },
+          {
+            "name": "GET All",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Replie by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Replie",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "reply",
+                    "value": "reply example",
+                    "type": "text"
+                  },
+                  {
+                    "key": "comment_id",
+                    "value": "5",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update Replie",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "reply",
+                    "value": "reply example",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Soft Delete Replie",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Force Delete Force Delete",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies/force-delete/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies",
+                  "force-delete",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET List All Deleted",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies/deleted",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies",
+                  "deleted"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Restore by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/replies/restore/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "replies",
+                  "restore",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Reactions",
+        "description": "Reaction endpoints (polymorphic) with subfolders for Posts, Comments, Replies and a General section.",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Reaction endpoints (polymorphic) with subfolders for Posts, Comments, Replies and a General section."
+          },
+          {
+            "name": "Posts",
+            "description": "React to posts",
+            "item": []
+          },
+          {
+            "name": "Comments",
+            "description": "React to comments",
+            "item": []
+          },
+          {
+            "name": "Replies",
+            "description": "React to replies",
+            "item": []
+          },
+          {
+            "name": "General",
+            "description": "General reaction listing and management",
+            "item": [
+              {
+                "name": "GET All",
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions"
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "GET View Reaction by ID",
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions/1",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions",
+                      "1"
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "POST Create Reaction",
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions"
+                    ]
+                  },
+                  "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                      {
+                        "key": "reaction_type_id",
+                        "value": "haha",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "PUT Update Reaction",
+                "request": {
+                  "method": "PUT",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions/1",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions",
+                      "1"
+                    ]
+                  },
+                  "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                      {
+                        "key": "reaction_type_id",
+                        "value": "sad",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "DELETE Soft Delete Reaction",
+                "request": {
+                  "method": "DELETE",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions/50",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions",
+                      "50"
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "DELETE Force Delete Force Delete",
+                "request": {
+                  "method": "DELETE",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions/force-delete/50",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions",
+                      "force-delete",
+                      "50"
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "GET List All Deleted",
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions/deleted",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions",
+                      "deleted"
+                    ]
+                  }
+                },
+                "response": []
+              },
+              {
+                "name": "GET View Restore by ID",
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Accept",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{base_api}}/reactions/restore/50",
+                    "host": [
+                      "{{base_api}}"
+                    ],
+                    "path": [
+                      "reactions",
+                      "restore",
+                      "50"
+                    ]
+                  }
+                },
+                "response": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Reaction Types",
+        "description": "Manage available reaction types (like, love, haha, sad, etc.).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Manage available reaction types (like, love, haha, sad, etc.)."
+          },
+          {
+            "name": "GET All",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Reaction Type by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Reaction Type",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "type",
+                    "value": "type example",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update Reaction Type",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "type",
+                    "value": "type example",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Soft Delete Reaction Type",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Force Delete Force Delete",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types/force-delete/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types",
+                  "force-delete",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET List All Deleted",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types/deleted",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types",
+                  "deleted"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Restore by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/reaction-types/restore/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "reaction-types",
+                  "restore",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Post Statuses",
+        "description": "Manage post statuses (published, draft, archived).",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Manage post statuses (published, draft, archived)."
+          },
+          {
+            "name": "GET All",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Post Statuse by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "POST Create Post Statuse",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "type",
+                    "value": "type example",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "PUT Update Post Statuse",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": [
+                  {
+                    "key": "type",
+                    "value": "type example",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Soft Delete Post Statuse",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses/1",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "DELETE Force Delete Force Delete",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses/force-delete/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses",
+                  "force-delete",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET List All Deleted",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses/deleted",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses",
+                  "deleted"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET View Restore by ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/post-statuses/restore/50",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "post-statuses",
+                  "restore",
+                  "50"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Misc",
+        "description": "Miscellaneous endpoints.",
+        "item": [
+          {
+            "name": "\ud83d\udcd8 Overview",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": []
+              }
+            },
+            "response": [],
+            "description": "Miscellaneous endpoints."
+          },
+          {
+            "name": "PUT Update Change Password",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api_auth}}/change-password",
+                "host": [
+                  "{{base_api_auth}}"
+                ],
+                "path": [
+                  "change-password"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "GET testing",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{base_api}}/send-mail",
+                "host": [
+                  "{{base_api}}"
+                ],
+                "path": [
+                  "send-mail"
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": []
+              }
+            },
+            "response": []
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            "// Attach Bearer token if present in environment",
+            "const token = pm.environment.get('api_web_token');",
+            "if (token) {",
+            "    pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });",
+            "    console.log('\ud83d\udd10 Token attached');",
+            "} else {",
+            "    console.warn('\u26a0\ufe0f No API token found. Please log in first.');",
+            "}",
+            "// Timestamp for debugging",
+            "console.log('\u23f0 Request at: ' + new Date().toLocaleString());"
+          ]
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            "// Basic 2xx check",
+            "pm.test('Response status is 2xx', function () {",
+            "    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);",
+            "});",
+            "// Save token automatically after login/register (if present)",
+            "try {",
+            "    const url = pm.request.url.toString();",
+            "    if (url.includes('/login') || url.includes('/register')) {",
+            "        const json = pm.response.json();",
+            "        if (json.data && json.data.token) {",
+            "            pm.environment.set('api_web_token', json.data.token);",
+            "            console.log('\ud83d\udd11 Token stored successfully.');",
+            "        }",
+            "    }",
+            "} catch (e) { console.warn('Could not auto-save token:', e); }",
+            "// Log response time",
+            "console.log('\u23f1\ufe0f Response time: ' + pm.response.responseTime + 'ms');",
+            "// Basic data key check",
+            "try {",
+            "    const json = pm.response.json();",
+            "    pm.test('Response contains data key', function () { pm.expect(json).to.have.property('data'); });",
+            "} catch (e) { /* ignore non-json responses */ }"
+          ]
+        }
+      }
+    ],
+    "variable": [
+      {
+        "key": "base_api",
+        "value": "http://127.0.0.1:8000/api",
+        "type": "string"
+      },
+      {
+        "key": "base_api_auth",
+        "value": "{{base_api}}/auth",
+        "type": "string"
+      },
+      {
+        "key": "api_web_token",
+        "value": "",
+        "type": "string"
+      },
+      {
+        "key": "api_mobile_token",
+        "value": "",
+        "type": "string"
+      }
+    ]
+  },
+  "environment": {
+    "name": "Local Laravel API",
+    "values": [
+      {
+        "key": "base_api",
+        "value": "http://127.0.0.1:8000/api",
+        "enabled": true
+      },
+      {
+        "key": "base_api_auth",
+        "value": "{{base_api}}/auth",
+        "enabled": true
+      },
+      {
+        "key": "api_web_token",
+        "value": "",
+        "enabled": true
+      },
+      {
+        "key": "api_mobile_token",
+        "value": "",
+        "enabled": true
+      }
+    ],
+    "timestamp": 1760801722921
+  }
+}
